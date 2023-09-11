@@ -1,0 +1,89 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title%} Gestion de stock{%endblock%}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}" />
+</head>
+<body>
+<header>
+
+</header>
+
+<nav>
+    
+    
+   <img src="{% static 'Pictures/images (15).jpeg' %}" alt="not found" width="50px" class="imgDashboard"> <a href="tableau">Tableau de bord</a>
+    <a href="{% url 'articles' %}">Article</a>
+    <a href="{% url 'categories'%}">Categorie</a>
+    <img src="{% static 'Pictures/sortie.png' %}" alt="not found" width="35px" class="imgEntree"> <a href="{% url 'entrees' %}">Entree(s)</a>
+    <img src="{% static 'Pictures/entree.png' %}" alt="not found" width="35px" class="imgSortie"> <a href="{% url 'sorties' %}">Sortie(s)</a>
+    <a href="{% url 'stocks' %}">Stock</a>
+    <a href="{% url 'distribution' %}">Distribution</a>
+    <a href="{% url 'Agents' %}">Employé(s)</a>
+    <a href="{% url 'depences' %}">Depense</a>
+    <a href="{% url 'Commandes' %}">Commande(s)</a>
+   <div class="ronds">
+    <div class="ron R1"></div>
+    <div class="ron R2"></div>
+    <div class="ron R3"></div>
+    <div class="ron R4"></div>
+   </div>
+    </nav>
+    <div class="nav_toggle">
+        <span class="line l1"></span>
+        <span class="line l2"></span>
+        <span class="line l3"></span>
+    </div>
+   
+    {% block content%}
+    <section>
+        
+        <div class="recherche">
+            <form action="" method="get">
+            <label for="recherche"><input type="search" placeholder="Taper ici pour rechercher"></label>
+            <input type="submit" value="Chercher">
+            </form>
+        </div>
+        <span style="position:relative; top:-55px;"><h1><center>Bienvenu sur la page des articles</center></h1></span>
+       <div class="ajoutArticle">
+            <a href="{% url 'formulaireArticle'%}">Nouveau</a>
+       </div>
+    <div class="articles">
+      
+        <table>
+            <thead>
+                <tr>
+                    <th>NOM</th>
+                    <th>PRIX D'ACHAT</th>
+                    <th>PRIX DE VENTE</th>
+                    <th>TVA</th>
+                    <th>Operation</th>
+                </tr>
+            </thead>
+            <tbody>
+            {%for article in articles%}
+            <tr>
+          <td><a href="{% url 'detail' article.id%}">{{article.nom}}</a></td>
+          <td>{{article.prixAchat}} Fc</td>
+          <td>{{article.prixVente}} Fc</td>
+          <td>{{article.tauxTva}}</td>
+          <td><a href="{% url 'modification' article.id%}" class="gererArticle" >Modifier</a>
+          <a href="{% url 'supression' article.id%}" class="gererArticle" >Supprimer</a></td>
+          </tr>
+          {%endfor%}
+          </tbody>
+    </div>
+</section>
+{%endblock%}
+<footer>
+
+</footer>
+
+<script  src="{% static 'js_file/index.js'%}">
+</script>
+<script nomodule><p>Veillez mettre a jour votre navigateur</p></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <title>Formulaire des article</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="formEnregistrement">
+        <p><h2>Formulaire d'enregistrement</h2></p>
+        <form action="" method="POST">
+            {% csrf_token %}
+           <!---- <p><label for="Nom article">Nom<input type="text" name="nom" required></label></p>
+            <p><label for="Prix achant">Prix d'achat<input type="number" name="prixAchat" required></label></p>
+            <p><label for="Prix vente">Prix de vente<input type="number" name="prixVente" required></label></p>
+            <p><label for="tva">Tva<input type="text" name="tauxTva" ></label></p>-->
+            {{formCom.as_p}}
+            <p><input type="submit" value="Enregistrer"></p>
+        </form>
+    </div>
+</body>
+</html>

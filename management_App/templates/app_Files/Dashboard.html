@@ -1,0 +1,25 @@
+{% extends 'app_Files/article.html' %}
+{%block title %}Tableau de bord{%endblock%}
+   {% block content %}
+    <div class="tableauDeBord">
+       <div class="quantiteArticle">
+     <p>{{articles|length}} Articles</p>
+     <p class="lien"><a href="{% url 'articles' %}">Cliquer pour voir ></a></p>
+        </div>
+        <div class="totalEntree">
+     <p>{{totalEntree.Quantite_Entree}} Entrées</p>
+     <p class="lien"><a href="{% url 'entrees' %}">Cliquer pour voir ></a></p>
+    </div>
+    <div class="totalSortie">
+    <p>{{totalSortie.Quantite_Sortie}} Sorties</p>
+    <p class="lien"><a href="{% url 'sorties' %}">Cliquer pour voir ></a></p>
+        </div>
+        <div class="totalComLivre">
+       <p> {{totalCommandeLivre.QuantiteLivre}} Livré</p>
+        <p class="lien"><a href="{% url 'Commandes' %}">Cliquer pour voir ></a></p>
+    </div>
+    <div class="totalComNonLivre">
+      <p> {{totalComNonLivre.Quantite}} Non Livré</p>
+       <p class="lien"><a href="{% url 'Commandes' %}">Cliquer pour voir ></a></p>
+   </div>
+{%endblock%}

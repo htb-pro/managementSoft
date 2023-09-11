@@ -1,0 +1,30 @@
+{% extends 'app_Files/article.html'%}
+{%block title %}List des Distribution{%endblock%}
+{%block content%}
+    <section>
+        <div class="ajoutDestination">
+            <a href="">Nouveau</a>
+        </div>
+    <div class="Distributions">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Operation</th>
+                </tr>
+            </thead>
+            
+            <tbody>{%for distribution in distributions %}
+                
+                <tr>
+                    <td>{{distribution.nomDestination}}</td>
+                    <td><a href="#" class="gererArticle">Modifier</a>
+                    <a href="#" class="gererArticle">Supprimer</a></td>
+                </tr>
+               
+            </tbody>
+            {%endfor%}
+        </table>
+    </div>
+</section>
+{%endblock%}

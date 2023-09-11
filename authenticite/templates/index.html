@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <title>Document</title>
+</head>
+<body>
+    {% if user.is_authenticated %} 
+    <p>connecte sous </p>{{user.username}} | <a href="{% url 'logout'%}">Deconnecte</a>
+    {%else %}
+    <p> <a href="{% url 'login'%}">Connexion</a></p>
+    <p><a href="">inscription</a></p>
+    {%endif%}
+</body>
+</html>

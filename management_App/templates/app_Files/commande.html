@@ -1,0 +1,40 @@
+{% extends 'app_Files/article.html'%}
+{%block title %}Commande effectuer{%endblock%}
+   {% block content %}
+    <section>
+        <div class="ajoutCommande">
+            <a href="{% url 'formulaireCommande' %}">Nouveau</a>
+        </div>
+        <div class="commandArticle">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Article</th>
+                        <th>Quantite</th>
+                        <th>Date</th>
+                        <th>Distribution</th>
+                        <th>Description</th>
+                        <th>Operation</th>
+                        <th>Etat</th>
+                    </tr>
+                </thead>
+                
+                <tbody>{%for commande in commandes %}
+                    
+                    <tr>
+                        <td>{% for com in commande.nomArticle.all %}{{com.nom}}{%endfor%}</td>
+                        <td>{{commande.quantiteCom}}</td>
+                        <td>{{commande.dateCom}}</td>
+                        <td>{{commande.destination.nomDestination}}</td>
+                        <td>{{commande.description}}</td>
+                        <td>{{commande.livraison}}</td>
+                        <td><a href="{% url 'modificationCommande' commande.id%}" class="gererArticle">Modifier</a>
+                        <a href="{% url 'supressionCommande' commande.id%}" class="gererArticle">Supprimer</a></td>
+                    </tr>
+                   
+                </tbody>
+                {%endfor%}
+            </table>
+        </div>
+    </section>
+   {%endblock%}

@@ -1,0 +1,33 @@
+{% extends 'app_Files/article.html' %}
+{%block title %}Catrgories d'article{%endblock%}
+   {% block content %}
+    <section>
+        <div class="ajoutCategorie">
+            <a href="">Nouveau</a>
+        </div>
+        <div class="categorieArticle">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Articles</th>
+                        <th>Operation</th>
+                    </tr>
+                </thead>
+                {%for categorie in categories %}
+                <tbody>
+                    
+                    <tr>
+                        <td>{{categorie.nom}}</td>
+                        <td>{% for cat in categorie.articles%}{{cat}}{%endfor%}</td>
+                        <!--<td>{{categorie.articles}}</td>-->
+                        <td><a href="#" class="gererArticle">Modifier</a>
+                        <a href="#" class="gererArticle">Supprimer</a></td>
+                    </tr>
+                   
+                </tbody>
+               {%endfor%}
+            </table>
+        </div>
+    </section>
+ {%endblock%}

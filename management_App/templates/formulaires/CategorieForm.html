@@ -1,0 +1,20 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <title>Formulaire des article</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="formEnregistrement">
+        <p><h2>Formulaire d'enregistrement</h2></p>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{formulaireCat.as_p}}
+            <p><input type="submit" value="Enregistrer"></p>
+        </form>
+    </div>
+</body>
+</html>

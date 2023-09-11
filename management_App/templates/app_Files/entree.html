@@ -1,0 +1,33 @@
+{% extends 'app_Files/article.html'%}
+{%block title%}Entrees effectuer{%endblock%}
+{%block content%}
+    <section>
+        <div class="ajoutArticle">
+            <a href="{% url 'formulaireArticle'%}">Nouveau</a>
+       </div>
+        <div class="entreeArticle">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Quantite</th>
+                        <th>Date</th>
+                        <th>Operation</th>
+                    </tr>
+                </thead>
+                
+                <tbody>{%for article in entrees %}
+                    
+                    <tr>
+                        <td>{{article.nom}}</td>
+                        <td>{{article.quantiteEntree}}</td>
+                        <td>{{article.date}}</td>
+                        <td><a href="{% url 'ModificationEntree' article.id%}" class="gererArticle" >Modifier</a>
+                            </tr>
+                   
+                </tbody>
+                {%endfor%}
+            </table>
+        </div>
+    </section>
+    {%endblock%}

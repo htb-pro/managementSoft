@@ -1,0 +1,736 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+}
+body
+{
+    background-color: #fff;
+}
+
+.nav_toggle
+{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    position: fixed;
+    /* border-radius: 50%; */
+    left: 30px;
+    top: 20px;
+    outline: none;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    
+}
+.line
+{
+    width: 45%;
+    height: 1.5px;
+    position: absolute;
+    top: 75px;
+    right: 10px;
+    display: block;
+    background-color: black;
+    transition: transform 0.3s ease-out,opacity 0.1s ease-out;
+
+}
+
+.l1
+{
+    transform: translateY(-10px);
+}
+.l3
+{
+    transform: translateY(10px);
+}
+.nav_toggle.active .l1
+{
+    transform: translateY(0) rotate(135deg) ;
+}
+.nav_toggle.active .l2
+{
+    opacity: 0 ;
+}
+.nav_toggle.active .l3
+{
+    transform: translateY(0) rotate(-135deg) ;
+}
+nav
+{
+    width: 20vw;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    top:0px;
+    justify-content: center;
+    align-items:center;
+    padding-top: 10px;
+    flex-direction: column;
+    background-color: #f1f1f1;
+   
+    /* background-color: rgb(49, 48, 48); */
+    /* border: 3px solid rgb(87, 172, 187); */
+    box-shadow: 5px 1px rgb(87, 172, 187);
+    transform: translateX(-100%); 
+    transition: transform 0.3s ;
+}
+img
+{
+   
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+    margin-left: -0px;
+}
+.imgDashboard
+{
+    position: absolute;
+    top: 7.5rem;
+    left: 10px;
+    border-radius: 50%;
+}
+.imgEntree
+{
+    position: absolute;
+    top: 17rem;
+    left: 16px;
+    border-radius: 50%;
+}
+.imgSortie
+{
+    position: absolute;
+    top: 19.5rem;
+    left: 17px;
+    border-radius: 50%;
+}
+nav.active
+{
+    transform: translate(0);
+    z-index: 1000px;
+}
+nav a
+{
+    font-family: arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    display: block;
+    color: black;
+    text-align: left;
+    text-decoration: none;
+    margin: 10px 0;
+    backdrop-filter: 30px;
+}
+nav a:hover
+{
+    color: red;
+    transition: 0.3s;
+    margin: 10px ;
+}
+nav a:focus
+{
+    color:red;
+    transition: 1s;
+}
+.ronds
+{
+    width: 10rem;
+    height: 5rem;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    bottom: 0px;
+    margin-left: 2.5rem;
+}
+
+.R1
+{
+    width: 25px;
+    height: 25px;
+    background-color: rgb(87, 172, 187);
+    border-radius: 50%;
+
+
+    margin-left:5px;
+}
+.R2
+{
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    border-radius: 50%;
+
+    margin-left:5px;
+}
+.R3
+{
+    width: 25px;
+    height:25px;
+    background-color: orange;
+    border-radius: 50%;
+    margin-left:5px;
+}
+.R4
+{
+    width: 25px;
+    height:25px;
+    background-color: red;
+    border-radius: 50%;
+    margin-left:5px;
+}
+h1
+{
+    font-family: 'lato';
+    font-weight: 100;
+    font-size: 50px;
+    color: #f1f1f1;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0;
+    top: 10px;
+}
+h1 span
+{
+    font-family: lato;
+    font-weight: 100;
+}
+
+
+/*-----------------------------------------------Mise en forme pour les tables des articles---*/
+
+.articles
+{
+    width: 50vw;
+    margin-left: 18rem;
+    margin-top: -0rem;
+    padding: 10px;
+    background-color: white;
+    position: fixed;
+}
+/*la mise en forme de la bouton d'ajout*/
+.ajoutArticle 
+{
+    position: absolute;
+    top: 6.5rem;
+    left: 19.2rem;
+    font-size: 25px;
+}
+.ajoutArticle a 
+{
+    text-decoration: none;
+    color: rgb(49, 48, 48);
+    height: 3rem;
+    width: 5rem;
+    background-color: white;
+    border: 1px solid;
+    border-color: rgb(87, 172, 187);
+    padding: 5px;
+}
+.ajoutArticle a:hover
+{
+    background-color: orange;
+}
+.ajoutCategorie
+{
+    position: absolute;
+    top: 3rem;
+    left: 19.2rem;
+    font-size: 25px;
+}
+.ajoutCategorie a 
+{
+    text-decoration: none;
+    color: rgb(49, 48, 48);
+    height: 3rem;
+    width: 5rem;
+    background-color: white;
+    border: 1px solid;
+    border-color: rgb(87, 172, 187);
+    padding: 5px;
+}
+.ajoutCategorie a:hover
+{
+    background-color: orange;
+}
+.ajoutSortie
+{
+    position: absolute;
+    top: 6.5rem;
+    left: 19.2rem;
+    font-size: 25px;
+}
+.ajoutSortie a 
+{
+    text-decoration: none;
+    color: rgb(49, 48, 48);
+    height: 3rem;
+    width: 5rem;
+    background-color: white;
+    border: 1px solid;
+    border-color: rgb(87, 172, 187);
+    padding: 5px;
+}
+.ajoutSortie a:hover
+{
+    background-color: orange;
+}
+
+.ajoutDestination
+{
+    position: absolute;
+    top: 6.5rem;
+    left: 19.2rem;
+    font-size: 25px;
+}
+.ajoutDestination a 
+{
+    text-decoration: none;
+    color: rgb(49, 48, 48);
+    height: 3rem;
+    width: 5rem;
+    background-color: white;
+    border: 1px solid;
+    border-color: rgb(87, 172, 187);
+    padding: 5px;
+}
+.ajoutDestination a:hover
+{
+    background-color: orange;
+}
+.ajoutAgent
+{
+    position: absolute;
+    top: 6.5rem;
+    left: 19.2rem;
+    font-size: 25px;
+}
+.ajoutAgent a 
+{
+    text-decoration: none;
+    color: rgb(49, 48, 48);
+    height: 3rem;
+    width: 5rem;
+    background-color: white;
+    border: 1px solid;
+    border-color: rgb(87, 172, 187);
+    padding: 5px;
+}
+.ajoutAgent a:hover
+{
+    background-color: orange;
+}
+.ajoutDepense
+{
+    position: absolute;
+    top: 6.5rem;
+    left: 19.2rem;
+    font-size: 25px;
+}
+.ajoutDepense a 
+{
+    text-decoration: none;
+    color: rgb(49, 48, 48);
+    height: 3rem;
+    width: 5rem;
+    background-color: white;
+    border: 1px solid;
+    border-color: rgb(87, 172, 187);
+    padding: 5px;
+}
+.ajoutDepense a:hover
+{
+    background-color: orange;
+}
+.ajoutCommande
+{
+    position: absolute;
+    top: 6.5rem;
+    left: 19.2rem;
+    font-size: 25px;
+}
+.ajoutCommande a 
+{
+    text-decoration: none;
+    color: rgb(49, 48, 48);
+    height: 3rem;
+    width: 5rem;
+    background-color: white;
+    border: 1px solid;
+    border-color: rgb(87, 172, 187);
+    padding: 5px;
+}
+.ajoutCommande a:hover
+{
+    background-color: orange;
+}
+/*------------------------------------------------------mise en forme du dashboard-----------------------*/
+.tableauDeBord
+{
+    display: flex;
+    flex-direction: row;
+    margin-left: 16.9rem;
+    margin-top: 1rem;
+}
+.tableauDeBord div
+{
+    width: 12rem;
+    height: 10rem;
+    background-color: #f1f1f1;
+    margin-left: 1rem;
+    border: 2px solid;
+    border-color: rgb(87, 172, 187);
+    box-shadow: 10px 0px rgb(87, 172, 187);
+    border-radius: 10px;
+    position: relative;
+}
+.tableauDeBord div p 
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+.tableauDeBord  div a
+{
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(27, 27, 27);
+    padding-left: 1rem;
+   
+}
+.lien
+{
+    width: 12rem;
+    height: 3rem;
+    background-color: #e2dfdf;
+    position: absolute;
+    top:6.3rem;
+    left: -5px;
+    
+}
+.lien:hover
+{
+    background-color: red;
+    transition: 0.5s;
+}
+.categorieArticle
+{
+    width: 50vw;
+    margin-left: 18rem;
+    margin-top: 5rem;
+    padding: 10px;
+    background-color: white;
+}
+.entreeArticle
+{
+    width: 50vw;
+    margin-left: 18rem;
+    margin-top: 9rem;
+    padding: 10px;
+    background-color: white;
+}
+.sortiesArticle
+{
+    width: 50vw;
+    margin-left: 18rem;
+    margin-top: 9rem;
+    padding: 10px;
+    background-color: white;
+}
+.Distributions
+{
+    width: 50vw;
+    margin-left: 18rem;
+    margin-top: 9rem;
+    padding: 10px;
+    background-color: white;
+}
+.Depense
+{
+    width: 50vw;
+    margin-left: 18rem;
+    margin-top: 9rem;
+    padding: 10px;
+    background-color: white;
+}
+.Agents
+{
+    width: 50vw;
+    margin-left: 18rem;
+    margin-top: 9rem;
+    padding: 10px;
+    background-color: white;
+}
+.commandArticle
+{
+    width: 50vw;
+    margin-left: 18rem;
+    margin-top: 9rem;
+    padding: 10px;
+    background-color: white;
+}
+.stockArticle
+{
+    width: 50vw;
+    margin-left: 18rem;
+    margin-top: 5rem;
+    padding: 10px;
+    background-color: white;
+}
+table
+{
+    
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 65rem;
+}
+table tr th
+{
+    font-size: 1.8rem;
+    width: 35rem;
+    height: 1.5rem;
+    text-align: left;
+    background-color: rgb(87, 172, 187);
+    font-family: serif,sens-serif,arial;
+}
+td a 
+{
+    text-decoration: none;
+    color: black;
+}
+table td
+{
+    height: 2rem;
+    font-size: 1.5rem;
+    background-color:rgba(249, 252, 249, 1.4);
+    border-bottom: 1px solid rgb(136, 136, 136);
+}
+tbody > tr
+{
+    
+    background-color:rgba(249, 252, 249, 1.4);
+    
+}
+.gererArticle
+{
+    width: 1.5rem;    
+    height: 4%;
+    background-color: #db8080;
+    font-size: 1rem;
+    border-radius: 5px;
+    padding: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+.gererArticle:hover
+{
+    background-color: red;
+}
+.recherche
+{
+    position: relative;
+    left: 55rem;
+    margin-top: 6%;
+    width: 15rem;
+    
+}
+.recherche input:not([type="submit"])
+{
+    height: 2.5rem;
+    width: 18rem;
+    border-radius: 1rem;
+    position: fixed;
+    font-size: 15px;
+    border-color: rgb(87, 172, 187);
+}
+.recherche input:not([type="submit"]):focus
+{
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 20px;
+     outline: none;
+     transition: 0.3s;
+     border-color: red;
+}
+.recherche input[type="submit"]
+{
+    position: absolute;
+    right: -13rem;
+    height: 2.5rem;
+    width: 10rem;
+    cursor: pointer;
+    font-size: 15px;
+    border-color: rgb(87, 172, 187);
+}
+.recherche input[type="submit"]:hover
+{
+    border-color: red;
+}
+::placeholder
+{
+    text-align: center;
+}
+/* -------------------------------------------------------mise en forme de formulaire ----------------- */
+.formArticle form
+{
+    height: 30rem;
+    width: 25rem;
+    background-color: rgba(249, 252, 249, 1.4);
+    margin-left: 35vw;
+    margin-top: 15vh;
+    font-size: 20px;
+    padding: 20px;
+    border-radius: 2rem;
+}
+.formArticle input:not([type="submit"])
+{
+    height: 1.5rem;
+    width: 15rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    border-radius: 5px;
+    margin-top: 1rem;
+    border-color:  rgb(87, 172, 187);
+    
+}
+.formArticle #id_nom
+{   /*positionnement de la zone de saisie nom dans le formulaire*/
+    margin-left: 3rem; 
+}
+.formArticle #id_tauxTva
+{
+    margin-left: 4.7rem;
+}
+.formArticle #id_prixAchat
+{
+    margin-left: 0.5rem;
+}
+.formArticle #id_quantiteEntree
+{ /*positionnement de la zone de saisie de la quantite dans le formulaire*/
+    margin-left: 2.3rem;
+}
+.formArticle #id_categorie
+{   /*positionnement de la zone de selection dans le formulaire*/
+    width: 15rem;
+    margin-left: 2rem;
+    margin-top: 10px;
+}
+.formArticle input:first-child
+{
+    width: 13rem;
+    height: 2.5rem;
+    border-radius: 10px;
+    margin-top: 5rem;
+    margin-left: 5rem;
+    font-size: 20px;
+}
+.formArticle input:first-child:hover
+{
+    background-color: red;
+    cursor: pointer;
+}
+
+.formSortie 
+{ /*mise en forme du formulaire de sortie*/
+    height: 30rem;
+    width: 25rem;
+    background-color: rgba(249, 252, 249, 1.4);
+    margin-left: 35vw;
+    margin-top: 12.5vh;
+    font-size: 20px;
+    padding: 20px;
+    border-radius: 2rem;
+}
+.formSortie input:not([type="submit"])
+{
+    height: 1.5rem;
+    width: 15rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    border-radius: 5px;
+    margin-top: 1rem;
+    border-color:  rgb(87, 172, 187);
+    
+}
+.formSortie #id_label
+{   /*positionnement de la zone de saisie nom dans le formulaire*/
+    margin-left: 3rem; 
+    width: 15rem;
+}
+.formSortie #id_quantite
+{
+    margin-left: 1.3rem;
+    
+}
+.formArticle #id_prixAchat
+{
+    margin-left: 0.5rem;
+}
+.formSortie #id_destination
+{
+    width: 15rem;
+    margin-top: 10px;
+    height: 2rem;
+}
+.formSortie input:first-child
+{
+    width: 13rem;
+    height: 2.5rem;
+    border-radius: 10px;
+    margin-top: 4rem;
+    margin-left: 5rem;
+    font-size: 20px;
+}
+.formSortie input:first-child:hover
+{
+    background-color: red;
+    cursor: pointer;
+}
+.formEnregistrement
+{
+    height: 25rem;
+    width: 25rem;
+    background-color: rgba(249, 252, 249, 1.4);
+    margin-left: 35vw;
+    margin-top: 20vh;
+    font-size: 20px;
+    padding: 20px;
+    border-radius: 2rem;
+}
+.formEnregistrement input:not([type="submit"])
+{
+    height: 1.5rem;
+    width: 15rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    border-radius: 5px;
+    margin-top: 1rem;
+    border-color:  rgb(87, 172, 187);
+    
+}
+.formEnregistrement input:not([type="submit"]):focus
+{
+    font-size: 25px;
+    transition: 0.3s;
+}
+#id_nom
+{
+    margin-left: 2.5rem;
+}
+#id_tauxTva
+{
+    margin-left: 0.5rem;
+}
+.formEnregistrement input:first-child
+{
+    width: 13rem;
+    height: 2.5rem;
+    border-radius: 10px;
+    margin-top: 5rem;
+    margin-left: 5rem;
+}
+.formEnregistrement input:first-child:hover
+{
+    background-color: red;
+    cursor: pointer;
+}

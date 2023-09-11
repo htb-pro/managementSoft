@@ -1,0 +1,40 @@
+{% extends 'app_Files/article.html' %}
+{%block title %}Depense effectuer{%endblock%}
+   {% block content %}
+    <section>
+        <div class="ajoutDepense">
+            <a href="">Nouveau</a>
+        </div>
+    <div class="Depense">
+        <table>
+            <thead>
+                <tr>
+                    <th>Raison</th>
+                    <th>Date</th>
+                    <th>Montant</th>
+                    <th>Devise</th>
+                    <th>Acteur</th>
+                    <th>Operation</th>
+                </tr>
+            </thead>
+            
+            <tbody>{%for depence in depences %}
+                
+                <tr>
+                    <td>{{depence.motif}}</td>
+                    <td>{{depence.date}}</td>
+                    <td>{{depence.montant}}</td>
+                    <td>{{depence.devise}}</td>
+                    <td>{{depence.acteur.nom}}</td>
+                    <td><a href="{% url 'modificationDepense' depence.id%}" class="gererArticle" >Modifier</a>
+                    <a href="{% url 'suppressionsDepense' depence.id%}" class="gererArticle" >Supprimer</a></td>
+                </tr>
+               
+            </tbody>
+            {%endfor%}
+        </table>
+    </div>
+</section>
+{%endblock%}
+
+

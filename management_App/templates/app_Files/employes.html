@@ -1,0 +1,38 @@
+{% extends 'app_Files/article.html'%}
+{%block title %}List des agents{%endblock%}
+{% block content%}
+    <section>
+        <div class="ajoutAgent">
+            <a href="{% url 'formulaireAgents'%}">Nouveau</a>
+        </div>
+    <div class="Agents">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Numero</th>
+                    <th>Nom utilisateur</th>
+                    <th>Mot de passe</th>
+                    <th>Operation</th>
+                </tr>
+            </thead>
+            
+            <tbody>{%for agent in agents %}
+                
+                <tr>
+                    <td>{{agent.nom}}</td>
+                    <td>{{agent.prenom}}</td>
+                    <td>{{agent.tel}}</td>
+                    <td>{{agent.nomUtilisateur}}</td>
+                    <td>{{agent.passWord}}</td>
+                    <td><a href="{% url 'ModificationAgent' agent.id%}" class="gererArticle" >Modifier</a>
+                    <a href="{% url 'supressionAgent' agent.id%}" class="gererArticle" >Supprimer</a></td>
+                </tr>
+               
+            </tbody>
+            {%endfor%}
+        </table>
+    </div>
+</section>
+ {%endblock%}

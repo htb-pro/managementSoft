@@ -1,0 +1,36 @@
+{% extends 'app_Files/article.html'%}
+{% block title%}Sorties effectuer{%endblock%}
+{%block content%}
+    <section>
+        <div class="ajoutSortie">
+            <a href="{% url 'formulaireSortie' %}">Nouveau</a>
+        </div>
+        <div class="sortiesArticle">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Quantite</th>
+                        <th>Date</th>
+                        <th>Distribution</th>
+                        <th>Operation</th>
+                    </tr>
+                </thead>
+                
+                <tbody>{%for article in sorties %}
+                    
+                    <tr>
+                        <td><p>{%for art in article.label.all%}{{art}} {%endfor%}</p></td>
+                        <td>{{article.quantite}}</td>
+                        <td>{{article.date}}</td>
+                        <td>{{article.destination.nomDestination}}</td>
+                        <td><a href="{% url 'modificationSortie' article.id%}" class="gererArticle" >Modifier</a>
+                        <a href="{% url 'suppressionsSortie' article.id%}" class="gererArticle" >Supprimer</a></td>
+                    </tr>
+                   
+                </tbody>
+                {%endfor%}
+            </table>
+        </div>
+    </section>
+    {%endblock%}
